@@ -2,26 +2,31 @@
 <html>
 <head>
   <title>Flapper News</title>
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-
+  <link rel="shortcut icon" type="image/png" href="/img/global-icon.png"/>
+  <!--<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.min.css">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
   <script src="/javascripts/angular-ui-router.js"></script>
   <script src="/javascripts/angularApp.js"></script>
+  <script src="http://code.angularjs.org/1.2.9/angular-animate.min.js"></script>
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 </head>
 <body ng-app="flapperNews"> 
-  <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
-    <ul class="nav navbar-nav">
-      <li ng-show="isLoggedIn()"><a href="#/dsd">{{ currentUser() }} </a> </li>
-      <li ng-show="isLoggedIn()"><a href="#/sdfsdf" ng-click="logOut()">Log Out </a> </li>
+<div class="layer">
+  <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
+  <a class="navbar-brand" href="#/">
+        <img alt="Brand" src="/img/global-icon.png">
+    </a>
+    <a class="navbar-brand" href="#/">Flapper News</a>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-show="isLoggedIn()"><a href="#/">{{ currentUser() }} </a> </li>
+      <li ng-show="isLoggedIn()"><a href="#/" ng-click="logOut()">Log Out </a> </li>
       <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a> </li>
       <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a> </li>
     </ul>
   </nav>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <ui-view> </ui-view>
-    </div>
+  <ui-view></ui-view>
   </div>
 </body>
 </html>

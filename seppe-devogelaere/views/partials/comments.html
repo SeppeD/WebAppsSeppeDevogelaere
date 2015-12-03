@@ -1,12 +1,13 @@
+<div class="newscontent">
 <div class="page-header">
-  <h3>
+  <h2>
     <a ng-show="post.link" href="{{post.link}}">
       {{post.title}}
     </a>
     <span ng-hide="post.link">
       {{post.title}}
     </span>
-  </h3>
+  </h2>
 </div>
 
 <div ng-repeat="comment in post.comments | orderBy:'-upvotes'">
@@ -18,7 +19,7 @@
   </span>
 </div>
 <div ng-hide="isLoggedIn()">
-    <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can comment.</h3>
+    <h5>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can comment.</h5>
 </div>
 <form ng-submit="addComment()"
       ng-show="isLoggedIn()"
@@ -31,3 +32,6 @@
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
 
+<slider images="images" ></slider>
+
+</div>
